@@ -67,16 +67,26 @@ namespace Menu_Matemàtic
                     Console.WriteLine($"El factorial de {num1} és {resultat}");
                     break;
                 case '5':
-                    // Métode 5
+                    Console.WriteLine("Escriu dos numeros dels que es faran una operacio combinatoria");
+                    num1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Escriu el segon numero");
+                    num2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(Combinatori(num1, num2));
                     break;
                 case '6':
-                    // Métode 6
+                    Console.WriteLine("Escriu un numero del que es buscara el seu divisor major");
+                    num1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(DivisorMajor(num1));
                     break;
                 case '7':
-                    // Métode 7
+                    Console.WriteLine("Escriu un numero del que es veura si es primer");
+                    num1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(Primer(num1));
                     break;
                 case '8':
-                    // Métode 8
+                    Console.WriteLine("Escriu el nombre de primers numeros primers que vols veure");
+                    num1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(Nprimers(num1));
                     break;
                 case 'q':
                     Console.WriteLine("Adéu");
@@ -138,6 +148,62 @@ namespace Menu_Matemàtic
                 resultat *= i;
             }
             return resultat;
+        }
+        static int Combinatori(int num, int num2)
+        {
+            int resultatfinal = 0;
+            resultatfinal = FactorialCalcul(num) / (FactorialCalcul(num2) * FactorialCalcul(num - num2));
+            return resultatfinal;
+        }
+        static int DivisorMajor(int num)
+        {
+            int divisormajor = 0;
+            for (int i = 1; i != num; i++)
+            {
+                if (num % i == 0)
+                {
+                    divisormajor = i;
+                }
+            }
+            return divisormajor;
+        }
+        static bool Primer(int num1)
+        {
+            bool primer = true;
+            for (int i = 2; i != num1; i++)
+            {
+                if (num1 % i == 0)
+                {
+                    primer = false;
+                }
+            }
+            return primer;
+        }
+
+        static string Nprimers(int num1)
+        {
+            int i = 1;
+            int contadorprimers = 0;
+            int contador = 0;
+            string llista = "";
+            while (contadorprimers != num1)
+            {
+                for (int n = 1; n <= i; n++)
+                {
+                    if ((i % n) == 0)
+                    {
+                        contador++;
+                    }
+                }
+                if (contador == 2)
+                {
+                    llista = llista + i + ",";
+                    contadorprimers++;
+                }
+                contador = 0;
+                i++;
+            }
+            return llista;
         }
     }
 }
