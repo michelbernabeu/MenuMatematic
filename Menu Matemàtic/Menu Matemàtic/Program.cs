@@ -83,7 +83,7 @@ namespace Menu_Matemàtic
                 case '8':
                     Console.WriteLine("Escriu el nombre de primers numeros primers que vols veure");
                     num1 = Convert.ToInt32(Console.ReadLine());
-                    (Nprimers(num1);
+                    Nprimers(num1);
                     break;
                 case 'q':
                     Console.WriteLine("Adéu");
