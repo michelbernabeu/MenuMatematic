@@ -1,26 +1,23 @@
-﻿using System.Net.NetworkInformation;
+﻿using System.Drawing;
+using System.Net.NetworkInformation;
 
 namespace Menu_Matemàtic
 {
     internal class Program
     {
+        private static ConsoleColor originalForegroundColor;
+        private static ConsoleColor originalBackgroundColor;
+
         static void Main(string[] args)
         {
             // Definim variables
             char opcio;
-            
-            // Demanem al switch
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Benvingut al menu matemàtic!");
-            Console.WriteLine("1. Màxim");
-            Console.WriteLine("2. MCD");
-            Console.WriteLine("3. MCM");
-            Console.WriteLine("4. Factorial");
-            Console.WriteLine("5. Combinatori");
-            Console.WriteLine("6. MostrarDivisorMajor");
-            Console.WriteLine("7. EsPrimer");
-            Console.WriteLine("8. NPrimersPrimers");
-            Console.WriteLine("q. Sortir");
-            Console.Write("Entra un valor: ");
+            Console.ResetColor();
+            PrincipiFonsColor();
+            MostrarMenu();
+            FinalFonsColor();
             opcio = Console.ReadKey().KeyChar;
             Console.WriteLine();
             switch (opcio)
@@ -86,7 +83,38 @@ namespace Menu_Matemàtic
                     break;
             }
         }
+        static void MostrarMenu()
+        {
+            Console.WriteLine("╔════════════════════════════════╗");
+            Console.WriteLine("║        Menú de Opciones        ║");
+            Console.WriteLine("╠════════════════════════════════╣");
+            Console.WriteLine("║ 1. Màxim                       ║");
+            Console.WriteLine("║ 2. MCD                         ║");
+            Console.WriteLine("║ 3. MCM                         ║");
+            Console.WriteLine("║ 4. Factorial                   ║");
+            Console.WriteLine("║ 5. Combinatori                 ║");
+            Console.WriteLine("║ 6. MostrarDivisorMajor         ║");
+            Console.WriteLine("║ 7. EsPrimer                    ║");
+            Console.WriteLine("║ 8. NPrimersPrimers             ║");
+            Console.WriteLine("║ q. Sortir                      ║");
+            Console.WriteLine("╚════════════════════════════════╝");
 
+            Console.Write("Entra una opción: ");
+        }
+
+        static void PrincipiFonsColor()
+        {
+            ConsoleColor originalBackgroundColor = Console.BackgroundColor;
+            ConsoleColor originalForegroundColor = Console.ForegroundColor;
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        static void FinalFonsColor()
+        {
+            Console.BackgroundColor = originalBackgroundColor;
+            Console.ForegroundColor = originalForegroundColor;
+        }
         static void Return()
         {
             int i = 5;
@@ -98,7 +126,7 @@ namespace Menu_Matemàtic
                 i--;
             }
         }
-        static int MaximCalcul (int num1, int num2)
+        static int MaximCalcul(int num1, int num2)
         {
             int nummaxim = 0;
             if (num1 > num2)
@@ -125,7 +153,7 @@ namespace Menu_Matemàtic
             return num1;
         }
 
-        static int MCMCalcul (int num1, int num2)
+        static int MCMCalcul(int num1, int num2)
         {
             return (num1 * num2) / MCDCalcul(num1, num2);
         }
@@ -133,7 +161,7 @@ namespace Menu_Matemàtic
         static int FactorialCalcul(int num1)
         {
             int resultat = 1;
-            for (int i = 1; i <= num1; i++) 
+            for (int i = 1; i <= num1; i++)
             {
                 resultat *= i;
             }
@@ -141,3 +169,4 @@ namespace Menu_Matemàtic
         }
     }
 }
+
