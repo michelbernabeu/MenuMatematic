@@ -68,22 +68,22 @@ namespace Menu_Matemàtic
                     num1 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Escriu el segon numero");
                     num2 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(Combinatori(num1, num2));
+                    Combinatori(num1, num2);
                     break;
                 case '6':
                     Console.WriteLine("Escriu un numero del que es buscara el seu divisor major");
                     num1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(DivisorMajor(num1));
+                    DivisorMajor(num1);
                     break;
                 case '7':
                     Console.WriteLine("Escriu un numero del que es veura si es primer");
                     num1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(Primer(num1));
+                    Primer(num1);
                     break;
                 case '8':
                     Console.WriteLine("Escriu el nombre de primers numeros primers que vols veure");
                     num1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(Nprimers(num1));
+                    Nprimers(num1);
                     break;
                 case 'q':
                     Console.WriteLine("Adéu");
@@ -93,25 +93,7 @@ namespace Menu_Matemàtic
                     break;
             }
         }
-        static void MostrarMenu()
-        {
-            Console.WriteLine("╔════════════════════════════════╗");
-            Console.WriteLine("║        Menú de Opciones        ║");
-            Console.WriteLine("╠════════════════════════════════╣");
-            Console.WriteLine("║ 1. Màxim                       ║");
-            Console.WriteLine("║ 2. MCD                         ║");
-            Console.WriteLine("║ 3. MCM                         ║");
-            Console.WriteLine("║ 4. Factorial                   ║");
-            Console.WriteLine("║ 5. Combinatori                 ║");
-            Console.WriteLine("║ 6. MostrarDivisorMajor         ║");
-            Console.WriteLine("║ 7. EsPrimer                    ║");
-            Console.WriteLine("║ 8. NPrimersPrimers             ║");
-            Console.WriteLine("║ q. Sortir                      ║");
-            Console.WriteLine("╚════════════════════════════════╝");
-
-            Console.Write("Entra una opción: ");
-        }
-
+        
         static void PrincipiFonsColor()
         {
             ConsoleColor originalBackgroundColor = Console.BackgroundColor;
