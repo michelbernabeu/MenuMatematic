@@ -16,7 +16,17 @@ namespace Menu_Matemàtic
             Console.WriteLine("Benvingut al menu matemàtic!");
             Console.ResetColor();
             PrincipiFonsColor();
-            MostrarMenu();
+            Console.WriteLine("1. Màxim");
+            Console.WriteLine("2. MCD");
+            Console.WriteLine("3. MCM");
+            Console.WriteLine("4. Factorial");
+            Console.WriteLine("5. Combinatori");
+            Console.WriteLine("6. MostrarDivisorMajor");
+            Console.WriteLine("7. EsPrimer");
+            Console.WriteLine("8. NPrimersPrimers");
+            Console.WriteLine("q. Sortir");
+            Console.Write("Entra un valor: ");
+            Console.WriteLine();
             FinalFonsColor();
             opcio = Console.ReadKey().KeyChar;
             Console.WriteLine();
@@ -93,20 +103,7 @@ namespace Menu_Matemàtic
                     break;
             }
         }
-        
-        static void PrincipiFonsColor()
-        {
-            ConsoleColor originalBackgroundColor = Console.BackgroundColor;
-            ConsoleColor originalForegroundColor = Console.ForegroundColor;
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-        static void FinalFonsColor()
-        {
-            Console.BackgroundColor = originalBackgroundColor;
-            Console.ForegroundColor = originalForegroundColor;
-        }
+    
         static void Return()
         {
             int i = 5;
